@@ -1,41 +1,50 @@
-/**
- * Created by alexisvincent
- */
-import React, {Component, createElement as $, createFactory} from 'react'
-import {flowRight} from 'lodash'
+import { Component, createFactory, DOM, PropTypes } from 'react'
 import styles from './App.ncss'
 
-const {div, input} = React.DOM
+const {div, input, p} = DOM
+import Sidebar from './Sidebar/Sidebar.js'
+import Conversation from './Conversation/Conversation.js'
 
-const App = flowRight()
-(class C extends Component {
+export default
+createFactory(class App extends Component {
+
+    static propTypes = {
+        username: PropTypes.string.isRequired
+    }
+
+    constructor() {
+        super()
+
+        this.state = {
+            conversations: [
+                {
+                    username: "john"
+                },
+
+                {
+                    username: "doe"
+                }
+            ],
+            selectedConversation: null
+        }
+    }
+
+    selectConversation = conversation => {
+        this.setState({
+            selectedConversation: conversation
+        })
+    }
+
     render() {
+        const {conversations, selectedConversation} = this.state
+        const {username} = this.props
+
         return (
-            div({className: styles.app},
-                div({className: styles.left},
-                    div({className: styles.leftHeader}, 'leftHeader'),
-                    div({className: styles.conversations},
-                        [1, 2, 3].map((x) => {
-                            return (
-                                div({key: x, className: styles.conversationPreview}, "I am a potato")
-                            )
-                        })
-                    )
-                ),
-                div({className: styles.right},
-                    div({className: styles.rightHeader}, 'rightHeader'),
-                    div({className: styles.conversation},
-                        [1, 2, 3, 4].map((msg) => (
-                            div({key: msg, className: msg % 2 == 0 ? styles.conversationLocal : styles.conversationRemote}, msg)
-                        ))
-                    ),
-                    div({className: styles.prompt},
-                        input({className: styles.input})
-                    )
-                )
+            div({className: styles.container},
+                Sidebar({conversations, username, onSelect: this.selectConversation}),
+
+                Conversation({conversation: selectedConversation})
             )
         )
     }
 })
-
-export default App

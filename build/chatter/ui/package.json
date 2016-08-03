@@ -65,7 +65,7 @@
       "lodash": "npm:lodash@^4.13.1",
       "modelizr": "npm:modelizr@^0.7.4",
       "moment": "npm:moment@^2.11.1",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.9",
       "postcss": "npm:postcss@^5.0.21",
       "postcss-cssnext": "npm:postcss-cssnext@^2.5.2",
       "postcss-import": "npm:postcss-import@8.0.2",
