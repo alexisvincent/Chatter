@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Knack Nerd Font", serif;
+}
+
+body > div {
+  height: 100%;
+}
+
+.frame {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 20px;
+}

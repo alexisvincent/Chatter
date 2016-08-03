@@ -1,0 +1,65 @@
+.app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.leftHeader {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px rgba(0, 0, 0, 0.1);
+  border-right-style: solid;
+  height: 40px;
+}
+
+.rightHeader {
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 40px;
+}
+
+.conversations {
+
+}
+
+.conversationPreview {
+
+}
+
+.conversationLocal {
+  align-self: flex-start;
+}
+
+.conversationRemote {
+  align-self: flex-end;
+}
+
+.conversation {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.prompt {
+  height: 60px;
+}
+
+.input {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  user-focus: none;
+  border-radius: 0;
+  outline: none;
+  height: 80%;
+  width: 100%;
+}
